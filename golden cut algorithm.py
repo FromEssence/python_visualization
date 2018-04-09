@@ -10,7 +10,7 @@ from matplotlib.lines import Line2D
 import math
 import matplotlib.pyplot as plt
 
-plt.style.use('ggplot')
+plt.style.use('dark_background')
 
 fig, ax = plt.subplots()
 dots, = ax.plot([], [], 'ro')
@@ -53,6 +53,7 @@ def gen_dots():
         
 def update_dots(newd):
     dots.set_data(newd[0], newd[1])
+    ax.set_xlim(newd[0][0]-0.5, newd[0][3]+0.5) #动态更改X坐标轴范围，点更清晰，但是每次是哪个点变化就看不清了
     return dots
     
 ani = animation.FuncAnimation(fig, update_dots, frames = gen_dots, interval=2000, init_func=init, repeat=False)
