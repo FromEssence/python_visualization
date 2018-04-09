@@ -1,2 +1,2 @@
 # python_visualization
-Data visualization using python
+Numerical methods visualization using python
